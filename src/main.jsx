@@ -9,32 +9,19 @@ import Services from "./pages/Services.jsx";
 import Booking from "./pages/Booking.jsx";
 import Contact from "./pages/Contact.jsx";
 import Live from "./pages/Live.jsx";
+import Error from "./components/Error.jsx"; // <-- Import Error page
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <Error />, // <-- Add errorElement here
     children: [
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/services",
-        element: <Services />,
-      },
-      {
-        path: "/booking",
-        element: <Booking />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/live",
-        element: <Live />,
-      },
+      { path: "about", element: <About /> },
+      { path: "services", element: <Services /> },
+      { path: "booking", element: <Booking /> },
+      { path: "contact", element: <Contact /> },
+      { path: "live", element: <Live /> },
     ],
   },
 ]);
